@@ -77,7 +77,7 @@ button {
 
 .task-card {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   gap: 16px;
   padding: 16px;
@@ -85,6 +85,44 @@ button {
   border-radius: 14px;
   background: #fff;
   box-shadow: 0 6px 18px rgba(28, 31, 38, 0.06);
+  transition: opacity 120ms ease, box-shadow 120ms ease;
+}
+
+.task-card.is-dragging {
+  opacity: 0.45;
+}
+
+.task-card.drop-before {
+  box-shadow: 0 -3px 0 #4a5eff, 0 6px 18px rgba(28, 31, 38, 0.06);
+}
+
+.task-card.drop-after {
+  box-shadow: 0 3px 0 #4a5eff, 0 6px 18px rgba(28, 31, 38, 0.06);
+}
+
+.drag-handle {
+  width: 36px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #9297a3;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.drag-handle:active {
+  cursor: grabbing;
+}
+
+.drag-handle:focus-visible {
+  outline: 3px solid rgba(74, 94, 255, 0.16);
+  outline-offset: 1px;
 }
 
 .task-text {
