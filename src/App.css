@@ -88,6 +88,10 @@ button {
   transition: opacity 120ms ease, box-shadow 120ms ease;
 }
 
+.task-card:first-child {
+  border: 2px solid #ff6b00;
+}
+
 .task-card.is-dragging {
   opacity: 0.45;
 }
