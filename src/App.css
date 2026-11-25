@@ -1,0 +1,151 @@
+.task-page {
+  width: min(720px, calc(100% - 32px));
+  height: 100svh;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 18px;
+  padding: 24px 0;
+  box-sizing: border-box;
+}
+
+.entry-bar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+}
+
+.entry-bar input {
+  width: 100%;
+  min-width: 0;
+  height: 52px;
+  box-sizing: border-box;
+  border: 1px solid #d5d7dc;
+  border-radius: 12px;
+  background: #fff;
+  color: #17181a;
+  padding: 0 16px;
+  font: inherit;
+  box-shadow: 0 4px 16px rgba(28, 31, 38, 0.05);
+}
+
+.entry-bar input::placeholder {
+  color: #94979f;
+}
+
+.entry-bar input:focus {
+  outline: 3px solid rgba(74, 94, 255, 0.16);
+  border-color: #4a5eff;
+}
+
+button {
+  font: inherit;
+}
+
+.add-button,
+.finish-button,
+.bump-button {
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform 120ms ease, background 120ms ease;
+}
+
+.add-button {
+  height: 52px;
+  padding: 0 20px;
+  background: #4a5eff;
+  color: #fff;
+}
+
+.add-button:hover,
+.finish-button:hover,
+.bump-button:hover {
+  transform: translateY(-1px);
+}
+
+.task-list {
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 2px 4px 24px;
+  scrollbar-gutter: stable;
+}
+
+.task-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid #e2e4e8;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(28, 31, 38, 0.06);
+}
+
+.task-text {
+  margin: 0;
+  color: #202124;
+  font-weight: 650;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+  text-align: left;
+}
+
+.task-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.finish-button,
+.bump-button {
+  min-height: 40px;
+  padding: 0 13px;
+}
+
+.finish-button {
+  background: #edf7ef;
+  color: #21733a;
+}
+
+.bump-button {
+  background: #eef0ff;
+  color: #3f4fd1;
+}
+
+.empty-state {
+  margin: 48px 0 0;
+  color: #9a9da5;
+  text-align: center;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 540px) {
+  .task-page {
+    width: calc(100% - 24px);
+    padding-top: 12px;
+  }
+
+  .task-card {
+    grid-template-columns: 1fr;
+  }
+
+  .task-actions {
+    justify-content: flex-end;
+  }
+}
